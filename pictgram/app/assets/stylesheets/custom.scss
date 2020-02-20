@@ -1,4 +1,4 @@
-h1,h2 {
+h1, h2 {
   font-weight: 100;
 }
 
@@ -10,9 +10,10 @@ h1,h2 {
   color: #fff;
   border: 1px solid #fff;
   padding-top: 15px;
-  font-size: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
   background-color: rgba(0,0,0,0.0);
-  
+
   &:hover {
     color: #fff;
   }
@@ -20,8 +21,8 @@ h1,h2 {
 
 .top-hero-wrapper {
   width: 100vw;
-  height: 100vw;
-  background-image: url("bg-top.png");
+  height: 100vh;
+  background-image: url('bg-top.png');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -30,12 +31,12 @@ h1,h2 {
 }
 
 .top-hero-container {
-  paddin-top: 220px;
+  padding-top: 220px;
   h1 {
     font-size: 56px;
     margin-bottom: 20px;
   }
-  
+
   h2 {
     margin-bottom: 60px;
   }
