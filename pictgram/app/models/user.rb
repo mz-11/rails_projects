@@ -9,3 +9,8 @@ class User < ApplicationRecord
   
   has_secure_password
 end
+
+
+# 参考
+# https://qiita.com/momotaro98/items/460c6cac14473765ec14
+# https://qiita.com/mpyw/items/886218e7b418dfed254b
