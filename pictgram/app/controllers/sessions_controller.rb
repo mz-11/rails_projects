@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   #   debugger
     
   #   if user && user.authenticate(password_params)
-      if user && user.authenticate(password_params[:password])
+      if user && user.authenticate(password_params[:password]) #キー password: が不要の理由
         log_in user
         redirect_to root_path, success: 'ログインに成功しました'
       else
