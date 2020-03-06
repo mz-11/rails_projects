@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
   #   user = User.find_by(email_params)
       user = User.find_by(email: email_params[:email])
   #   debugger
-    
   #   if user && user.authenticate(password_params)
       if user && user.authenticate(password_params[:password]) #キー password: が不要の理由
         log_in user
@@ -28,8 +27,6 @@ class SessionsController < ApplicationController
         render :new
       end
   end
-  
-  
   
   def destroy
     log_out
@@ -53,5 +50,4 @@ class SessionsController < ApplicationController
   def password_params
     params.require(:session).permit(:password)
   end
-  
 end
