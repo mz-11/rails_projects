@@ -13,8 +13,11 @@
             <%= f.label :description %>
             <%= f.text_area :description, class: 'form-control' %>
           </div>
-
-          <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
+          
+          <!--ログインしていない場合は投稿ボタンを非表示にする-->
+          <% if logged_in? %>
+            <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
+          <% end %>
 
         <% end %>
       </div>
