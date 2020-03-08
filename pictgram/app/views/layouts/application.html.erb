@@ -22,7 +22,10 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to favorites_index_path do %>
+              <!--favorites_indexはルーティング名でrake routesで確認できる-->
+              
+              <%= if   
                 <%= image_tag "icons/heart.png" %>
               <% end %>
             </li>

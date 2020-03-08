@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !current_user.nil?
+    # !と?は何を意味しているのか
   end
   
 end
