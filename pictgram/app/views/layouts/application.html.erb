@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
@@ -24,8 +25,7 @@
             <li>
               <%= link_to favorites_index_path do %>
               <!--favorites_indexはルーティング名でrake routesで確認できる-->
-              
-              <%= if   
+                
                 <%= image_tag "icons/heart.png" %>
               <% end %>
             </li>
