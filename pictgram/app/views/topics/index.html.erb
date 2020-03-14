@@ -7,11 +7,12 @@
             <h2 class="topic-author">
               <%= topic.user.name %>
             </h2>
-            <%= image_tag topic.image.url %>
-            <!--なにを表している？
-            image_tag '〜.png(画像ファイル名)'ではないのか？-->
-            <!--topicテーブルの-->
             
+            <%= image_tag topic.image.url %>
+            <!--image_tag '〜.png(画像ファイル名)'ではないのか？-->
+            <!--→topicテーブルのimageカラムの値をurlにしている-->
+            
+            <!--いいねボタンCSS切り替え課題-->
             <% if !topic.favorite_users.include?(current_user) %>
               <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
               <i class="fa fa-heart fa-2x like-btn"></i>

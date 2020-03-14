@@ -11,15 +11,16 @@
             
             <!--いいねボタンCSS切り替え課題-->
             <% if !topic.favorite_users.include?(current_user) %>
-              <%= link_to favorites_path(topic_id: topic.id),method: :post do %>
-              <i class="far fa-heart like-btn"></i>
+              <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
+              <i class="fa fa-heart fa-2x like-btn"></i>
               <% end %>
             <% else %>
-              <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
-              <i class="fas fa-heart unlike-btn"></i>
+              <%= link_to destroy_path(topic_id: topic.id), method: :post do %>
+              <i class="fa fa-heart fa-2x unlike-btn"></i>
               <% end %>
             <% end %>
-            
+            <!--いいね数を表示-->
+            <%= topic.favorite_users.count %>
             
             
             
