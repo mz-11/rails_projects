@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'comments/create'
+  get 'comments/destroy'
   get 'topics/new'
   get 'sessions/new'
   get 'users/new'
@@ -13,8 +15,11 @@ Rails.application.routes.draw do
  
   resources :users
   resources :topics
+    resources :comments
    
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
   post '/destroy', to: 'favorites#destroy'
+  
+  
 end

@@ -23,9 +23,14 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
+              <%= link_to topics_path do %>
+              <!--favorites_indexはルーティング名でrake routesで確認できる-->
+                <%= image_tag "icons/picture.png" %>
+              <% end %>
+            </li>
+            <li>
               <%= link_to favorites_index_path do %>
               <!--favorites_indexはルーティング名でrake routesで確認できる-->
-                
                 <%= image_tag "icons/heart.png" %>
               <% end %>
             </li>

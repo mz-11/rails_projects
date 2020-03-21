@@ -5,9 +5,11 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="topic-index-single">
             <h2 class="topic-author">
-              <%= topic.user.name %>
-            </h2>
             
+            <%= topic.user.name %>
+            
+              
+            </h2>
             <%= image_tag topic.image.url %>
             <!--image_tag '〜.png(画像ファイル名)'ではないのか？-->
             <!--→topicテーブルのimageカラムの値をurlにしている-->
@@ -25,10 +27,24 @@
             <!--いいね数を表示-->
             <%= topic.favorite_users.count %>
             
-            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            <!--コメントフォームへ-->
+            <%= link_to new_comment_path(topic_id: topic.id) do %>
+            <!--(topic_id: topic.id)でコメントフォームにtopicのidを渡す-->
+              <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            <% end %>
+            
             <p class="topic-text">
               <%= topic.description %>
             </p>
+            
+            <div class="topic-comment">
+              <h4>コメント</h4>
+                <% topic.comments.each do |comment| %>
+                <!--topic（3行目に定義されている）、commentsはcommentsテーブルのcommentカラム内容を示す？-->
+              <%= comment.comment %>
+              <% end %>
+            </div>
+            
           </div>
         </div>
       </div>
