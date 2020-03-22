@@ -24,7 +24,8 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.new(topic_params)
     # topicsとはなにを示している？クラス？テーブル名？
     if @topic.save
-      redirect_to topics_path(comment: @comment.id), success: '投稿に成功しました'
+      # redirect_to topics_path(comment: @comment.id), success: '投稿に成功しました'
+      redirect_to topics_path, success: '投稿に成功しました'
     else
       flash.now[:danger] = "投稿に失敗しました"
       render :new
