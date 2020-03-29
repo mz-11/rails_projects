@@ -9,13 +9,10 @@ class CommentsController < ApplicationController
 
   def create
     # @topic = Topic.find_by(params[:id])
-    # Paramsを受け取る設定が必要
+    # Paramsを受け取る設定が必要→topicコントローラーからコメントフォームにとぶときのlink_toで引数を指定しtopic.idを渡す
     @comment = Comment.new(comment_params)
-      # comment: params[:comment],
-      # user_id: current_user.id,
     
-      # ユーザーとコメントの紐付けはできたが、投稿とコメントの紐付けができておらず、常にtopic_idが1となる
-      
+    # ユーザーとコメントの紐付けはできたが、投稿とコメントの紐付けができておらず、常にtopic_idが1となる→解決
     if @comment.save
       redirect_to topics_path, success:  "コメントできました"
     else
