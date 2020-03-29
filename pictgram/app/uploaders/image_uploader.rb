@@ -7,6 +7,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
   
+    # S3用の設定
+  if Rails.env.development?
+    storage :file
+  elsif Rails.env.test?
+    storage :file
+  else
+    storage :fog
+  end
+  
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
