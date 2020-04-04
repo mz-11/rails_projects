@@ -3,8 +3,8 @@ unless Rails.env.development? || Rails.env.test?
   CarrierWave.configure do |config|
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: 'AKIAY5H5M6W7EW5EY2H4',
-      aws_secret_access_key: '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',
+      aws_access_key_id: '',
+      aws_secret_access_key: '',
       region: 'ap-northeast-1'
     }
 
