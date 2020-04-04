@@ -27,7 +27,10 @@ class TopicsController < ApplicationController
       render :new
     end
   end
-
+  
+  def show
+    @topic = Topic.find_by(id: params[:id])
+  end
 
   private
   def topic_params
