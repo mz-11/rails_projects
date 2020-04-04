@@ -8,6 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :fog
   
     # S3用の設定
+    # ifを用いて設定することで全ての  画像がS3に保存され、料金が発生してしまうことを防ぐ。開発環境、テスト環境ではローカルへ保存。
   if Rails.env.development?
     storage :file
   elsif Rails.env.test?
