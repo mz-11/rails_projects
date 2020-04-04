@@ -10,7 +10,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   
   # storage :fog
   
-  # S3用の設定
+  # S3用の設定 image_uploader に書けばこっちはいらないんじゃないか？
   if Rails.env.development?
     storage :file
   elsif Rails.env.test?
